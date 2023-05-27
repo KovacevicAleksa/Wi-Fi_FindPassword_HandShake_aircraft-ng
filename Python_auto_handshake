@@ -49,7 +49,7 @@ print("Monitor mode disabled. Exiting...")
 
 #########################
 
-sfrom scapy.all import *
+from scapy.all import *
 
 file_path = '/home/kali/Desktop/folder5-01.cap'
 
