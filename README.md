@@ -32,7 +32,7 @@
 - The script will stop the monitor mode on the specified interface using sudo airmon-ng stop and display the message "Monitor mode isključen" (Monitor mode disabled).
 # After capturing the handshake packets, you can use a decryption script to decrypt the captured data and retrieve the Wi-Fi network password.
 - sudo aircrack-ng filename-01.cap -w /usr/share/wordlists/rockyou.txt
-# Which adapters support
+# Which adapters support monitor mode
 - https://deviwiki.com/wiki/List_of_Wireless_Adapters_That_Support_Monitor_Mode_and_Packet_Injection
 - https://hackersgrid.com/2022/01/best-kali-linux-wifi-adapter.html
 
