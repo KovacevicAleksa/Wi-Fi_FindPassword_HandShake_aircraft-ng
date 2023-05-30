@@ -30,3 +30,7 @@
 - While the handshake capture is in progress, you can wait for the desired amount of time to capture enough packets. Once done, press "Stop" in the terminal where the script is running.
 
 - The script will stop the monitor mode on the specified interface using sudo airmon-ng stop and display the message "Monitor mode isključen" (Monitor mode disabled).
+# After capturing the handshake packets, you can use a decryption script to decrypt the captured data and retrieve the Wi-Fi network password.
+## sudo aircrack-ng filename-01.cap -w /usr/share/wordlists/rockyou.txt
+
+
