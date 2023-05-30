@@ -34,5 +34,6 @@
 - sudo aircrack-ng filename-01.cap -w /usr/share/wordlists/rockyou.txt
 # Which adapters support
 - https://deviwiki.com/wiki/List_of_Wireless_Adapters_That_Support_Monitor_Mode_and_Packet_Injection
+- https://hackersgrid.com/2022/01/best-kali-linux-wifi-adapter.html
 
 
