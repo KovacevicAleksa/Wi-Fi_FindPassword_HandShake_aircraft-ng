@@ -7,9 +7,9 @@
 - Python: Python is the programming language used for the development of the Handshake Acquisition and Decoding Program. Install Python by following the instructions provided by the official Python website.
 - WiFi Adapter with Monitor Mode: To capture handshake packets, you need a WiFi adapter that supports monitor mode. Refer to the documentation of your WiFi adapter to enable monitor mode.
 
-## What this script DO?
+# What this script DO?
 
-# This script automatically disconnects devices from a Wi-Fi network and captures the handshake packets for further analysis
+## This script automatically disconnects devices from a Wi-Fi network and captures the handshake packets for further analysis
 
 - The script will display wireless network information using the iwconfig command.
 
