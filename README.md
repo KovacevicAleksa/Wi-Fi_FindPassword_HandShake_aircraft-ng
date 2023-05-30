@@ -1,4 +1,4 @@
-##Before using the program, ensure that you have the following dependencies installed:**
+# Before using the program, ensure that you have the following dependencies installed:**
 
 - Airodump-ng: Airodump-ng is a wireless packet capture tool that will be used to capture handshake packets. Install it by following the instructions provided by the Aircrack-ng project.
 - Airmon-ng: Airmon-ng is a script used for switching wireless network interfaces to monitor mode. Install it by following the instructions provided by the Aircrack-ng project.
