@@ -17,6 +17,9 @@ def install_dependencies():
 
     # Install Gnome Terminal
     run_command("sudo apt install gnome-terminal")
+    
+    # Install Python
+    run_command("sudo apt install python3")
 
 
 # Install dependencies
