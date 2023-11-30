@@ -6,13 +6,8 @@ def run_command(command):
 
 
 def install_dependencies():
-    # Install Airodump-ng
-    run_command("sudo apt install aircrack-ng")
 
-    # Install Airmon-ng
-    run_command("sudo apt install aircrack-ng")
-
-    # Install Aireplay-ng
+    # Install Aireplay-ng,Airmon-ng,Airodump-ng
     run_command("sudo apt install aircrack-ng")
 
     # Install Gnome Terminal
